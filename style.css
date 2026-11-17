@@ -456,3 +456,52 @@ i{
 .modal-footer p{
     color:#382b2b !important;
 }
+/* Circular pulsing menu button */
+.starter-btn-wrap #starters {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #234D3A;
+  border: 2px solid #bc9e82;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* Soft expanding pulse */
+.starter-btn-wrap #starters::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 2px solid #234D3A;
+  border-radius: 50%;
+  z-index: -1;
+  animation: menuPulse 2s ease-out infinite;
+}
+
+@keyframes menuPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+/* Keep the button elegant on hover */
+.starter-btn-wrap #starters:hover {
+  background-color: #1b3d2e;
+  color: #fff;
+}
